@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><!-- the album's cover -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:layout_marginBottom="16dp"
+    android:background="@color/widgetsColor"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/np_cover"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="@android:dimen/thumbnail_width"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:contentDescription="@string/covers_pref_title"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/ImageView.Cover"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/np_playback_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?android:attr/actionBarItemBackground"
+            android:contentDescription="@string/content_playback_speed"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_speed" />
+
+        <ImageButton
+            android:id="@+id/np_equalizer"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?android:attr/actionBarItemBackground"
+            android:contentDescription="@string/equalizer"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_equalizer" />
+
+        <ImageButton
+            android:id="@+id/np_love"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?android:attr/actionBarItemBackground"
+            android:contentDescription="@string/favorite_add"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_favorite" />
+
+        <ImageButton
+            android:id="@+id/np_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?android:attr/actionBarItemBackground"
+            android:contentDescription="@string/content_repeat"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_repeat_one_disabled" />
+
+    </LinearLayout>
+</LinearLayout>

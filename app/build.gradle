@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 33
+    //noinspection GradleDependency
+    defaultConfig {
+        applicationId "com.mobtech.mtplayer"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0.1"
+
+        vectorDrawables.useSupportLibrary true
+    }
+
+    //retrieve version number
+    applicationVariants.all { variant ->
+        resValue "string", "versionName", variant.versionName
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // For Kotlin projects
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    lintOptions {
+        disable 'MissingTranslation', 'AllowBackup',
+                'GoogleAppIndexingWarning'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+}
+
+dependencies {
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    // Support
+    implementation "androidx.activity:activity-ktx:1.6.0"
+    implementation 'androidx.browser:browser:1.4.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.media:media:1.6.0'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.google.android.material:material:1.7.0'
+
+    // Third-party
+    //https://mvnrepository.com/artifact/com.squareup.moshi/moshi-kotlin
+    implementation 'com.squareup.moshi:moshi:1.14.0'
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
+
+    //https://github.com/zhanghai/AndroidFastScroll/releases
+    implementation 'me.zhanghai.android.fastscroll:library:1.1.8'
+
+    //https://github.com/coil-kt/coil/releases
+    implementation 'io.coil-kt:coil:2.2.2'
+}
