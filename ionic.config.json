@@ -1,0 +1,7 @@
+{
+  "name": "MT Player",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

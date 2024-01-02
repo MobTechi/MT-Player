@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ config.appName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" href="/bottom-tabs/home">
+      <ion-icon aria-hidden="true" name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="library" href="/bottom-tabs/library">
+      <ion-icon aria-hidden="true" name="wallet-outline"></ion-icon>
+      <ion-label>Library</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" href="/bottom-tabs/settings">
+      <ion-icon aria-hidden="true" name="settings-outline"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
+

@@ -1,0 +1,9 @@
+ion-toolbar {
+    --background: var(--black);
+}
+
+ion-tabs {
+    margin-top: 56px;
+    height: calc(100% - 56px);
+    background: var(--dark-400);
+}
